@@ -21,14 +21,21 @@ The study will focus on answering the following questions:
 ---
 ## Methodology and Tools
 * **Data Source:** The analysis is based on the `MFG10YearTerminationData.csv` file.
-* **Analysis Tool:** The entire process of data cleaning, transformation, metrics analysis, and visualization was performed using **Microsoft Excel**.
-* **Version Control:** This repository is managed with **Git** and **GitHub**. The data file (`.xlsx`) where the analysis is performed is excluded from version control via the `.gitignore` file to keep the repository lightweight.
+* **Transformation Tool:** Data cleaning and transformation are performed using **Power Query** within Microsoft Excel. Final metrics and visualizations are created in Excel sheets.
+* **Source Code:** The M language scripts for each Power Query transformation are stored in the `power-query-scripts/` folder for review and version control.
+* **Version Control:** This repository is managed with Git and GitHub. The Power Query M scripts are versioned as source code, while the main Excel data file is excluded via the `.gitignore` file.
 
 ---
 ## Repository Structure
+├── assets/ # Contains all supporting assets like images, diagrams, etc. 
+
 ├── dataset/ # Folder ignored by Git, contains the data. 
 
-│    └── MFG10YearTerminationData.xlsx 
+│   └── MFG10YearTerminationData.xlsx 
+
+├── pq_scripts/  # Contains the M language source code for data transformation.
+
+│   └── 01-Clean-Data.pq
 
 ├── .gitignore # Configuration file to ignore the dataset folder. 
 
