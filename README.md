@@ -27,8 +27,11 @@ The study will focus on answering the following questions:
 ---
 ## Repository Structure
 ├── dataset/ # Folder ignored by Git, contains the data. 
+
 │    └── MFG10YearTerminationData.xlsx 
+
 ├── .gitignore # Configuration file to ignore the dataset folder. 
+
 └── README.md # This file.
 ## Download Processed Data
 The final Excel workbook, which includes the raw data, all transformations, pivot tables, and charts, will be available for download at the following link: (Work in Progress)
