@@ -27,8 +27,8 @@ let
     #"leftOuterJoin Job" = Table.NestedJoin(
         #"leftOuterJoin TermMotive", {"job_title"}, Job, {"job_title"}, "Job", JoinKind.LeftOuter
     ),
-    #"expandedTermMotive" = Table.ExpandTableColumn(#"leftOuterJoin Job", "TermMotive", {"id"}, {"TermMotive.id"}),
-    #"expandedJob" = Table.ExpandTableColumn(#"expandedTermMotive", "Job", {"id"}, {"Job.id"}),
+    #"expandedTermMotive" = Table.ExpandTableColumn(#"leftOuterJoin Job", "TermMotive", {"id"}, {"termination_id"}),
+    #"expandedJob" = Table.ExpandTableColumn(#"expandedTermMotive", "Job", {"id"}, {"job_id"}),
     // Remove day column since it's not necesary anymore
     #"removedDay" = Table.RemoveColumns(#"expandedJob", {"job_title", "termreason_desc", "Day"})
 in

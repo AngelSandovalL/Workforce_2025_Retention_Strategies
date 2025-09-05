@@ -1,0 +1,6 @@
+// TurnoverRate
+=
+DIVIDE([Terms],
+	DIVIDE([StartingHC] + [EndingHC],
+		 2)
+)

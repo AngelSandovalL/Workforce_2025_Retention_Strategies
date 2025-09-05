@@ -1,0 +1,5 @@
+//EndingHC
+=
+CALCULATE(
+    COUNT(AnnualHeadcount[EmployeeID])
+)
