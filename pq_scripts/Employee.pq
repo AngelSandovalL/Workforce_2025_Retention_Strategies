@@ -5,6 +5,7 @@ let
     #"removedColumns" = Table.SelectColumns(
         source, {"EmployeeID", "birthdate_key", "orighiredate_key", "gender_short"}
     ),
-    #"removedDuplicates" = Table.Distinct(#"removedColumns")
+    #"removedDuplicates" = Table.Distinct(#"removedColumns"),
+    #"addedAge" = Table.AddColumn(removedDuplicates, "age", each Date.Year(Date.From(DateTime.LocalNow())) - Date.Year([birthdate_key]))
 in
-    #"removedDuplicates"
+    #"addedAge"

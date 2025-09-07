@@ -1,6 +1,16 @@
 // TurnoverRate
 =
-DIVIDE([Terms],
-	DIVIDE([StartingHC] + [EndingHC],
-		 2)
-)
+VAR vStartingHC = [StartingHC]
+VAR vEndingHC = [EndingHC]
+VAR vTerms = [Terms]
+
+VAR sumHC = vStartingHC + vEndingHC
+
+VAR vDivisor =  IF(vStartingHc > 0, 1 ,0) + IF(vEndingHC > 0, 1, 0)
+
+VAR avgHC = DIVIDE(sumHC, vDivisor)
+
+VAR result = DIVIDE(vTerms, avgHC)
+
+RETURN
+result + 0
