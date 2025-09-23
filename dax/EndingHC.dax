@@ -2,4 +2,4 @@
 =
 CALCULATE(
     COUNT(AnnualHeadcount[EmployeeID])
-)
+) + 0

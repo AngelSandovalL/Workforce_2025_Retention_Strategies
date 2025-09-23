@@ -3,4 +3,4 @@
 CALCULATE(
     COUNT(AnnualHeadcount[EmployeeID]), 
     DATEADD('Calendar'[date],-1,YEAR)
-)
+) + 0 

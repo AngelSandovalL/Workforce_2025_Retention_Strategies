@@ -1,12 +1,12 @@
 # Workforce_2025_Retention_Strategies
 ---
-This project presents a comprehensive analysis of employee turnover (attrition) at a manufacturing company, using a dataset that spans a 10-year period (2006-2015).
+This project provides a strategic diagnosis of employee turnover (attrition) using a historical dataset from a manufacturing company, with an updated date range spanning from 2015 to 2024. The final deliverable will be an interactive Power BI dashboard designed for senior management.
 
 You can find the original dataset at https://www.kaggle.com/datasets/HRAnalyticRepository/employee-attrition-data
 
 ---
 ## Project Objective
-The main objective is to identify the key patterns and factors that influence employee terminations. Through this analysis, the goal is to generate **informed hypotheses** that can serve as a foundation for developing future talent retention strategies, helping the organization focus its efforts on the areas of greatest impact.
+The main objective is to move beyond operational reporting and deliver actionable insights that inform the creation of targeted talent retention strategies. Through this analysis, the goal is to identify the key patterns and factors that influence employee terminations, allowing the organization to focus its efforts on the areas of greatest impact.
 
 ---
 ## Key Questions to Answer
@@ -20,10 +20,10 @@ The study will focus on answering the following questions:
 
 ---
 ## Methodology and Tools
-* **Data Source:** The analysis is based on the `MFG10YearTerminationData.csv` file.
-* **Transformation Tool:** Data cleaning and transformation are performed using **Power Query** within Microsoft Excel. Final metrics and visualizations are created in Excel sheets.
-* **Source Code:** The M language scripts for each Power Query transformation are stored in the `pq_scripts/` folder for review and version control.
-* **Version Control:** This repository is managed with Git and GitHub. The Power Query M scripts are versioned as source code, while the main Excel data file is excluded via the `.gitignore` file.
+* **Data Transformation (ETL):** Power Query (M Language).
+* **Data Modeling & Visualization:** Power BI.
+* **Metrics and KPIs:** DAX (Data Analysis Expressions).
+* **Version Control:** This repository is managed with Git and GitHub. The Power Query M and DAX scripts are versioned as source code, while the bin files like .docx, .pdf, .xlsx, .csv files are excluded via the `.gitignore` file.
 
 ---
 ## Repository Structure
@@ -31,9 +31,11 @@ The study will focus on answering the following questions:
 
 │   └── images
 
+│   └── docs
+
 ├── dataset/ # Folder ignored by Git, contains the data. 
 
-│   └── MFG10YearTerminationData.xlsx 
+│   └── MFG10YearTerminationData.csv
 
 ├── dax/ # Folder with .dax files 
 
@@ -42,9 +44,8 @@ The study will focus on answering the following questions:
 ├── .gitignore # Configuration file to ignore the dataset folder. 
 
 └── README.md # This file.
-## Download Processed Data
-The final Excel workbook, which includes the raw data, all transformations, pivot tables, and charts, will be available for download at the following link: (Work in Progress)
 
---- 
-## Findings and Conclusions 
-*(This section will be updated with the key findings and hypotheses generated once the analysis is complete).*
+## Accessing Data and Deliverables
+The raw dataset (.csv) and the final Power BI dashboard (.pbix file) are not stored in this repository to maintain its size and focus on source code. You can access them at the following secure link:
+* https://drive.google.com/file/d/1RJPJRiBZ4nF_PRcHLzXSoldk2861oTPe/view?usp=sharing
+

@@ -2,3 +2,6 @@
 dataset/
 *.xlsx
 *.csv
+*.docx
+*.doc
+*.pdf
