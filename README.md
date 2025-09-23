@@ -39,7 +39,7 @@ The study will focus on answering the following questions:
 
 ├── dax/ # Folder with .dax files 
 
-├── pq_scripts/  # Contains the M language source code for data transformation.
+├── m_scripts/  # Contains the M language source code for data transformation.
 
 ├── .gitignore # Configuration file to ignore the dataset folder. 
 
