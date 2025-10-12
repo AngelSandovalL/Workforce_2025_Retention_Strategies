@@ -5,3 +5,6 @@ dataset/
 *.docx
 *.doc
 *.pdf
+# Ignore pbix files on bin folder
+bin/
+*.pbix

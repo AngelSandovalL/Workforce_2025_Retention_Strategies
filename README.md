@@ -47,5 +47,5 @@ The study will focus on answering the following questions:
 
 ## Accessing Data and Deliverables
 The raw dataset (.csv) and the final Power BI dashboard (.pbix file) are not stored in this repository to maintain its size and focus on source code. You can access them at the following secure link:
-* https://drive.google.com/file/d/1RJPJRiBZ4nF_PRcHLzXSoldk2861oTPe/view?usp=sharing
+* https://drive.google.com/drive/folders/1kMYurmOavpP8K4S6ry5RlIcu9jjO7XzW?usp=sharing
 
