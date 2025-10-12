@@ -1,7 +1,7 @@
 // Calendar
 let
-    startDate = List.Min(EmployeeHistory[recorddate_key]),
-    endDate = List.Max(AnnualHeadcount[recorddate_key]),
+    startDate = List.Min(Staging[recorddate_key]),
+    endDate = List.Max(F_AnnualHeadcount[recorddate_key]),
     durationInDays = Duration.Days(endDate - startDate) + 1,
     dateList = List.Dates(startDate, durationInDays, #duration(1, 0, 0, 0)),
     tableFromList = Table.FromList(dateList, Splitter.SplitByNothing(), null, null, ExtraValues.Error),

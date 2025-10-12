@@ -14,18 +14,20 @@ let
             "department_name",
             "termtype_desc",
             "STATUS_YEAR",
-            "length_of_service"
+            "length_of_service",
+            "recorddate_key",
+            "orighiredate_key"
         }
     ),
     // Add a day column to exclude anual headcount snapshot data
-    #"addedDay" = Table.AddColumn(#"removedColumns", "Day", each Date.Day([recorddate_key])),
+    #"addedDay" = Table.AddColumn(#"removedColumns", "Day", each Date.Day([terminationdate_key])),
     #"excludeDay31" = Table.SelectRows(#"addedDay", each ([Day] = 1)),
     // Retrieve id's from dimension tables
     #"leftOuterJoin TermMotive" = Table.NestedJoin(
-        #"excludeDay31", {"termreason_desc"}, TermMotive, {"termreason_desc"}, "TermMotive", JoinKind.LeftOuter
+        #"excludeDay31", {"termreason_desc"}, D_TermMotive, {"termreason_desc"}, "TermMotive", JoinKind.LeftOuter
     ),
     #"leftOuterJoin Job" = Table.NestedJoin(
-        #"leftOuterJoin TermMotive", {"job_title"}, Job, {"job_title"}, "Job", JoinKind.LeftOuter
+        #"leftOuterJoin TermMotive", {"job_title"}, D_Job, {"job_title"}, "Job", JoinKind.LeftOuter
     ),
     #"expandedTermMotive" = Table.ExpandTableColumn(#"leftOuterJoin Job", "TermMotive", {"id"}, {"termination_id"}),
     #"expandedJob" = Table.ExpandTableColumn(#"expandedTermMotive", "Job", {"id"}, {"job_id"}),
