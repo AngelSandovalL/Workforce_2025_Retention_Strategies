@@ -8,7 +8,7 @@ erDiagram
 	direction BT
     %% Tablas de Dimensión
     D_Employee {
-        int EmployeeID PK "Llave Primaria"
+        int EmployeeID PK
         int age
         int birthdate_key FK
         varchar gender_short
@@ -17,20 +17,20 @@ erDiagram
     }
 
     D_Job {
-        int id PK "Llave Primaria"
+        int id PK
         varchar business_function
         varchar department_name
         varchar job_title
     }
 
     D_Store {
-        int store_id PK "Llave Primaria"
+        int store_id PK
         varchar BUSINESS_UNIT
         varchar city_name
     }
 
     D_Calendar {
-        date date PK "Llave Primaria"
+        date date PK
         varchar day_name
         int day_of_month
         int day_of_week
@@ -39,7 +39,7 @@ erDiagram
     }
 
     D_TermMotive {
-        int id PK "Llave Primaria"
+        int id PK
         varchar termreason_desc
         varchar termtype_desc
     }

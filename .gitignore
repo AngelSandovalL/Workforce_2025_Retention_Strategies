@@ -9,3 +9,6 @@ dataset/
 # Ignore pbix files on bin folder
 bin/
 *.pbix
+# Ignore heavy images
+*.svg
+*.png
