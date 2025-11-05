@@ -1,6 +1,6 @@
 // Calendar
 let
-    startDate = List.Min(Staging[recorddate_key]),
+    startDate = List.Min(Staging[orighiredate_key]),
     endDate = List.Max(F_AnnualHeadcount[recorddate_key]),
     durationInDays = Duration.Days(endDate - startDate) + 1,
     dateList = List.Dates(startDate, durationInDays, #duration(1, 0, 0, 0)),
