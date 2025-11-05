@@ -1,7 +1,8 @@
-// EmployeeHistory
+// EmployeeHistory 
 let
     source = Staging,
-    // Remove unnecesary columns
+    
+    // 1. Eliminar columnas innecesarias
     #"removedColumns" = Table.RemoveColumns(
         source,
         {
@@ -19,19 +20,30 @@ let
             "orighiredate_key"
         }
     ),
-    // Add a day column to exclude anual headcount snapshot data
-    #"addedDay" = Table.AddColumn(#"removedColumns", "Day", each Date.Day([terminationdate_key])),
-    #"excludeDay31" = Table.SelectRows(#"addedDay", each ([Day] = 1)),
-    // Retrieve id's from dimension tables
+    #"filterTerminations" = Table.SelectRows(
+        #"removedColumns",
+        each [terminationdate_key] <> #date(1909, 1, 1)
+    ),
     #"leftOuterJoin TermMotive" = Table.NestedJoin(
-        #"excludeDay31", {"termreason_desc"}, D_TermMotive, {"termreason_desc"}, "TermMotive", JoinKind.LeftOuter
+        #"filterTerminations", {"termreason_desc"},
+        D_TermMotive, {"termreason_desc"},
+        "TermMotive", JoinKind.LeftOuter
     ),
     #"leftOuterJoin Job" = Table.NestedJoin(
-        #"leftOuterJoin TermMotive", {"job_title"}, D_Job, {"job_title"}, "Job", JoinKind.LeftOuter
+        #"leftOuterJoin TermMotive", {"job_title"},
+        D_Job, {"job_title"},
+        "Job", JoinKind.LeftOuter
     ),
-    #"expandedTermMotive" = Table.ExpandTableColumn(#"leftOuterJoin Job", "TermMotive", {"id"}, {"termination_id"}),
-    #"expandedJob" = Table.ExpandTableColumn(#"expandedTermMotive", "Job", {"id"}, {"job_id"}),
-    // Remove day column since it's not necesary anymore
-    #"removedDay" = Table.RemoveColumns(#"expandedJob", {"job_title", "termreason_desc", "Day"})
+    #"expandedTermMotive" = Table.ExpandTableColumn(
+        #"leftOuterJoin Job", "TermMotive",
+        {"id"}, {"termination_id"}
+    ),
+    #"expandedJob" = Table.ExpandTableColumn(
+        #"expandedTermMotive", "Job",
+        {"id"}, {"job_id"}
+    ),
+    #"removedTextColumns" = Table.RemoveColumns(
+        #"expandedJob", {"job_title", "termreason_desc"}
+    )
 in
-    #"removedDay"
+    #"removedTextColumns"
