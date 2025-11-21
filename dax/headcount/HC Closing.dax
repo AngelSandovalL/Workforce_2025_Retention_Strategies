@@ -1,0 +1,5 @@
+HC Closing = 
+CALCULATE(
+    COUNTROWS('F_AnnualHeadcount'),
+    LASTDATE('D_Calendar'[Date]) 
+)

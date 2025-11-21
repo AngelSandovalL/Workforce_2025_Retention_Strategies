@@ -1,0 +1,2 @@
+-- Table to get the last update date
+Z_Metadata = ROW("LastRefresh",NOW())

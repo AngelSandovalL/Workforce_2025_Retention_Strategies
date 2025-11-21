@@ -1,0 +1,5 @@
+HC Opening = 
+CALCULATE(
+    [HC Closing],
+    SAMEPERIODLASTYEAR('D_Calendar'[Date])
+)

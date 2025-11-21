@@ -1,5 +1,0 @@
-// Terms
-=
-CALCULATE(
-    COUNT(EmployeeHistory[EmployeeID])
-) + 0

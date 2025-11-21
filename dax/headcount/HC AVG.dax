@@ -1,0 +1,15 @@
+HC AVG = 
+AVERAGEX(
+    VALUES('D_Calendar'[Year]), 
+    VAR _Closing = CALCULATE(COUNTROWS('F_AnnualHeadcount'), LASTDATE('D_Calendar'[Date]))
+    VAR _Opening = CALCULATE(COUNTROWS('F_AnnualHeadcount'), SAMEPERIODLASTYEAR('D_Calendar'[Date]))
+    
+    VAR _YearlyAvg = 
+        IF(
+            ISBLANK(_Opening),
+            _Closing,
+            (_Opening + _Closing) / 2
+        )
+    RETURN
+        _YearlyAvg
+)

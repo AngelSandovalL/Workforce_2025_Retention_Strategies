@@ -1,0 +1,4 @@
+Total Terminations = 
+CALCULATE(
+    COUNTROWS('F_EmployeeHistory'),
+    F_EmployeeHistory[STATUS] = "TERMINATED")

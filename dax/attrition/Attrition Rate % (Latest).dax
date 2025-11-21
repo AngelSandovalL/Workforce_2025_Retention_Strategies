@@ -1,0 +1,5 @@
+Attrition Rate % (Latest) = 
+CALCULATE(
+    [Attrition Rate %],
+    'D_Calendar'[Year] = MAX('D_Calendar'[Year])
+)

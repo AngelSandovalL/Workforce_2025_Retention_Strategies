@@ -1,0 +1,27 @@
+footer = 
+VAR Nombre = "Angel Sandoval"
+VAR Email = "langel.sand@gmail.com"
+VAR ColorTexto = "%23555555" 
+VAR ColorIconos = "%2300DC33" 
+
+VAR Path_User = "M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"
+VAR Path_Mail = "M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+
+RETURN
+    "data:image/svg+xml;utf8," & 
+    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20'>" & 
+    "<g transform='translate(0, 2)'>" & 
+        "<path fill='" & ColorIconos & "' d='" & Path_User & "'/>" &
+    "</g>" &
+    "<text x='25' y='15' fill='" & ColorTexto & "' font-family='Segoe UI, Arial' font-size='14' font-weight='bold'>" & 
+        Nombre & 
+    "</text>" &
+    "<text x='140' y='15' fill='" & ColorTexto & "' font-family='Segoe UI' font-size='14'>|</text>" &
+    "<g transform='translate(155, 2)'>" & 
+        "<path fill='" & ColorIconos & "' d='" & Path_Mail & "'/>" &
+    "</g>" &
+    "<text x='180' y='15' fill='" & ColorTexto & "' font-family='Segoe UI, Arial' font-size='14'>" & 
+        Email & 
+    "</text>" &
+
+    "</svg>"

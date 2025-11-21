@@ -1,0 +1,21 @@
+Z_Glossary = DATATABLE (
+    "Term (Metric/Field)", STRING,
+    "Definition", STRING,
+    "Category", STRING,
+    {
+
+        { "Total Terminations", "Conteo total de empleados que han dejado la organización en el periodo. Fuente: F_Employee_History.", "Métrica Principal" },
+        { "HC Closing", "Headcount al cierre del periodo seleccionado (31 de Diciembre). Fuente: F_Headcount.", "Métrica Base" },
+        { "HC Opening", "Headcount al cierre del periodo anterior (Año Pasado).", "Métrica Base" },
+        { "HC AVG", "Promedio de Headcount (Inicial + Final) / 2 calculado anualmente. Denominador para tasas.", "Cálculo" },
+        { "Attrition Rate %", "Tasa de rotación anual. Fórmula: Total Terminations / HC AVG.", "KPI Estratégico" },
+        { "HC Latest", "Cifra más reciente de empleados activos disponible.", "KPI" },
+        
+
+        { "Department", "Unidad funcional a la que pertenece el empleado (ej. Producción, Ventas).", "Dimensión Org" },
+        { "Termination Type", "Clasificación de alto nivel de la salida: Voluntaria (Decisión del empleado) o Involuntaria (Decisión de la empresa).", "Dimensión" },
+        { "Length of Service", "Antigüedad en años cumplidos al momento de la baja.", "Dimensión" },
+        { "Voluntary", "Salidas por Renuncia o Retiro.", "Concepto de Negocio" },
+        { "Involuntary", "Salidas por Despido o Recorte de personal.", "Concepto de Negocio" }
+    }
+)

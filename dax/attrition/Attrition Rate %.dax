@@ -1,0 +1,6 @@
+Attrition Rate % = 
+DIVIDE(
+    [Total Terminations], 
+    [HC AVG], 
+    0
+)
