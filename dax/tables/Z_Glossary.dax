@@ -5,21 +5,22 @@ Glossary = DATATABLE (
     {
 
         { "Total Terminations", "Conteo total de bajas (STATUS = TERMINATED). Fuente: F_EmployeeHistory.", "Métrica Principal" },
-        { "HC Closing", "Headcount al cierre del periodo (31 Dic). Fuente: F_Headcount.", "Métrica Base" },
+        { "HC Closing", "Headcount al cierre del periodo (31 Dic).", "Métrica Base" },
         { "HC Opening", "Headcount al cierre del año anterior.", "Métrica Base" },
         { "HC AVG", "Promedio anual (Inicial + Final) / 2. Denominador para tasas.", "Cálculo" },
         { "Attrition Rate %", "Tasa de rotación (Bajas / HC AVG).", "KPI Estratégico" },
-        { "HC Latest", "Headcount activo más reciente.", "KPI" },
         
 
-        { "Department", "Unidad funcional del empleado.", "Dimensión Org" },
-        { "Voluntary", "Renuncias y Retiros (Decisión empleado).", "Concepto de Negocio" },
-        { "Involuntary", "Despidos y Recortes (Decisión empresa).", "Concepto de Negocio" },
+        { "Voluntary", "Categoría General: Salida iniciada por decisión del empleado.", "Tipo de Baja" },
+        { "Involuntary", "Categoría General: Salida iniciada por la empresa.", "Tipo de Baja" },
+        { "Resignation", "Renuncia. El empleado se va por insatisfacción u otras oportunidades. Indica riesgo de retención.", "Razón Específica" },
+        { "Retirement", "Retiro/Jubilación. Salida natural por edad o antigüedad. Generalmente predecible.", "Razón Específica" },
+        { "Layoff", "Recorte de Personal/Despido. Salida forzada por reestructuración o razones económicas de la empresa, no necesariamente por desempeño.", "Razón Específica" },
         
 
-        { "Danger Zone", "Cuadrante Crítico (Alta Tasa / Alto HC). Áreas grandes perdiendo personal. Prioridad Máxima.", "Matriz de Riesgo" },
-        { "Warning Zone", "Cuadrante de Alerta (Alta Tasa / Bajo HC). Áreas pequeñas con fugas porcentuales altas.", "Matriz de Riesgo" },
-        { "Stable Zone", "Cuadrante de Estabilidad (Baja Tasa / Alto HC). Áreas grandes que retienen talento (Pilares).", "Matriz de Riesgo" },
-        { "Safe Zone", "Cuadrante Seguro (Baja Tasa / Bajo HC). Áreas pequeñas sin problemas de retención.", "Matriz de Riesgo" }
+        { "Danger Zone", "Cuadrante Crítico (Alta Tasa / Alto HC). Prioridad Máxima.", "Matriz de Riesgo" },
+        { "Warning Zone", "Cuadrante de Alerta (Alta Tasa / Bajo HC).", "Matriz de Riesgo" },
+        { "Stable Zone", "Cuadrante de Estabilidad (Baja Tasa / Alto HC).", "Matriz de Riesgo" },
+        { "Safe Zone", "Cuadrante Seguro (Baja Tasa / Bajo HC).", "Matriz de Riesgo" }
     }
 )

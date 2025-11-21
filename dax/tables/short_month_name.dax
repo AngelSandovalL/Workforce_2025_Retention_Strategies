@@ -1,0 +1,1 @@
+short_month_name = FORMAT('D_Calendar'[Date], "MMM")
