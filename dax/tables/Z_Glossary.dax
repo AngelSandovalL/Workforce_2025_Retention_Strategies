@@ -1,26 +1,30 @@
 Glossary = DATATABLE (
-    "Term (Metric/Field)", STRING,
-    "Definition", STRING,
-    "Category", STRING,
+    "Término", STRING,
+    "Definición", STRING,
+    "Categoría", STRING,
     {
 
-        { "Total Terminations", "Conteo total de bajas (STATUS = TERMINATED). Fuente: F_EmployeeHistory.", "Métrica Principal" },
-        { "HC Closing", "Headcount al cierre del periodo (31 Dic).", "Métrica Base" },
-        { "HC Opening", "Headcount al cierre del año anterior.", "Métrica Base" },
-        { "HC AVG", "Promedio anual (Inicial + Final) / 2. Denominador para tasas.", "Cálculo" },
-        { "Attrition Rate %", "Tasa de rotación (Bajas / HC AVG).", "KPI Estratégico" },
+        { "Total Terminations", "Conteo total de bajas (STATUS = TERMINATED). Fuente: F_EmployeeHistory.", "Métrica" },
+        { "Attrition Rate %", "Tasa de rotación porcentual. Fórmula: [Total Terminations] / [HC AVG].", "KPI Estratégico" },
+        { "HC AVG", "Headcount Promedio. Cálculo: (HC Inicial + HC Final) / 2. Se usa como denominador para suavizar fluctuaciones anuales.", "Cálculo" },
+        { "HC Latest", "Headcount (Plantilla) activa en el último periodo disponible.", "Métrica" },
         
 
-        { "Voluntary", "Categoría General: Salida iniciada por decisión del empleado.", "Tipo de Baja" },
-        { "Involuntary", "Categoría General: Salida iniciada por la empresa.", "Tipo de Baja" },
-        { "Resignation", "Renuncia. El empleado se va por insatisfacción u otras oportunidades. Indica riesgo de retención.", "Razón Específica" },
-        { "Retirement", "Retiro/Jubilación. Salida natural por edad o antigüedad. Generalmente predecible.", "Razón Específica" },
-        { "Layoff", "Recorte de Personal/Despido. Salida forzada por reestructuración o razones económicas de la empresa, no necesariamente por desempeño.", "Razón Específica" },
+        { "Voluntary", "Salida iniciada por decisión del empleado.", "Tipo de Baja" },
+        { "Involuntary", "Salida iniciada por decisión de la empresa.", "Tipo de Baja" },
+        { "Resignation", "Renuncia voluntaria. Indica insatisfacción o búsqueda de nuevas oportunidades.", "Razón" },
+        { "Retirement", "Jubilación/Retiro. Salida natural por edad. Frecuente en personal 55+.", "Razón" },
+        { "Layoff", "Recorte de Personal/Despido masivo. Salida forzada por reestructuración, no por desempeño individual.", "Razón" },
         
 
-        { "Danger Zone", "Cuadrante Crítico (Alta Tasa / Alto HC). Prioridad Máxima.", "Matriz de Riesgo" },
-        { "Warning Zone", "Cuadrante de Alerta (Alta Tasa / Bajo HC).", "Matriz de Riesgo" },
-        { "Stable Zone", "Cuadrante de Estabilidad (Baja Tasa / Alto HC).", "Matriz de Riesgo" },
-        { "Safe Zone", "Cuadrante Seguro (Baja Tasa / Bajo HC).", "Matriz de Riesgo" }
+        { "Danger Zone", "Zona de Peligro (Alta Tasa / Alto HC). Departamentos grandes perdiendo mucho personal.", "Matriz de Riesgo" },
+        { "Warning Zone", "Zona de Alerta (Alta Tasa / Bajo HC). Departamentos pequeños con porcentajes altos (Ruido estadístico).", "Matriz de Riesgo" },
+        { "Stable Zone", "Zona Estable (Baja Tasa / Alto HC). Departamentos grandes con retención controlada.", "Matriz de Riesgo" },
+        { "Safe Zone", "Zona Segura (Baja Tasa / Bajo HC). Bajo riesgo.", "Matriz de Riesgo" },
+
+
+        { "Length of Service", "Años de antigüedad cumplidos al momento de la baja.", "Dimensión" },
+        { "Age Group", "Rango de edad del empleado.", "Dimensión" },
+        { "Business Unit", "División operativa: STORES (Tiendas) vs HEADOFFICE (Corporativo).", "Dimensión" }
     }
 )
