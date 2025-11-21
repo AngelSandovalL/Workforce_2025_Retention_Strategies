@@ -37,7 +37,7 @@ This project moves beyond simple visualization by implementing a robust Business
     * Designed a 6-page interactive report with drill-through capabilities.
     * Implemented **Decomposition Trees** for root-cause analysis.
     * Used **Ribbon Charts** to visualize ranking volatility over the decade.
-    
+
 * **Version Control:** This repository is managed with Git and GitHub. The Power Query M and DAX scripts are versioned as source code, while the bin files like .docx, .pdf, .xlsx, .csv files are excluded via the `.gitignore` file.
 
 ---
@@ -79,5 +79,5 @@ During the analysis of the 2015-2024 period, the project uncovered critical stru
 
 ## Accessing Data and Deliverables
 The raw dataset (.csv) and the final Power BI dashboard (.pbix file) are not stored in this repository to maintain its size and focus on source code. You can access them at the following secure link:
-* https://drive.google.com/drive/folders/1kMYurmOavpP8K4S6ry5RlIcu9jjO7XzW?usp=sharing
+* https://drive.google.com/drive/folders/1Wl1ueGIWtsytB2WoQBot4RKdV7448Yqv?usp=sharing
 
